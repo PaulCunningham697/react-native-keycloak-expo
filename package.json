@@ -1,0 +1,58 @@
+{
+  "name": "react-native-keycloak-expo",
+  "version": "1.0.0",
+  "description": "Keycloak authentication provider for React Native using Expo",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build",
+    "test": "jest",
+    "lint": "eslint src/**/*.ts src/**/*.tsx"
+  },
+  "keywords": [
+    "keycloak",
+    "react-native",
+    "expo",
+    "authentication",
+    "oauth",
+    "oidc"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/react-native-keycloak-expo.git"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-native": ">=0.60.0",
+    "expo-auth-session": ">=5.0.0",
+    "expo-web-browser": ">=13.0.0"
+  },
+  "optionalDependencies": {
+    "@react-native-async-storage/async-storage": "^1.19.0"
+  },
+  "peerDependenciesMeta": {
+    "expo-auth-session": {
+      "optional": false
+    },
+    "expo-web-browser": {
+      "optional": false
+    }
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0 || ^19.0.0",
+    "@types/react-native": "^0.72.0 || ^0.73.0 || ^0.74.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.45.0",
+    "jest": "^29.0.0",
+    "typescript": "^5.0.0"
+  },
+  "files": [
+    "lib/",
+    "README.md",
+    "LICENSE"
+  ]
+}
