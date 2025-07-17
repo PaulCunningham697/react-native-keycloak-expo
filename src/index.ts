@@ -1,10 +1,12 @@
 export { KeycloakProvider, useKeycloak } from './KeycloakContext';
+export { getStorage } from './storage';
 export type {
     KeycloakConfig,
     KeycloakTokens,
     KeycloakUser,
     KeycloakContextType,
     KeycloakProviderProps,
+    KeycloakLoginOptions,
 } from './types';
 export {
     buildAuthUrl,

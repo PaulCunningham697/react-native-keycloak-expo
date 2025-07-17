@@ -69,7 +69,15 @@ In your Keycloak admin console:
 1. Create a new client or use an existing one
 2. Set the client to "Public"
 3. Add your redirect URI (e.g., `your-app://auth`)
-4. Enable "Direct Access Grants" if needed
+4. **Enable "Proof Key for Code Exchange Code Challenge Method"** (PKCE)
+5. Set **"Code Challenge Method"** to `S256`
+6. Enable "Direct Access Grants" if needed for refresh tokens
+7. **Disable "Client authentication"** (since it's a public client)
+
+**Important PKCE Settings:**
+- Client Type: `public`
+- Proof Key for Code Exchange Code Challenge Method: `enabled`
+- Code Challenge Method: `S256`
 
 ### 2. Configure Your App
 
@@ -309,9 +317,16 @@ interface KeycloakTokens {
 
 ### Common Issues
 
-1. **Redirect URI mismatch**: Ensure the redirect URI in Keycloak matches your app's URI scheme
-2. **Token refresh fails**: Check if refresh tokens are enabled in your Keycloak client
-3. **Network errors**: Verify Keycloak server is accessible and CORS is configured properly
+1. **PKCE code verifier not specified**:
+    - Ensure your Keycloak client has PKCE enabled
+    - Set "Code Challenge Method" to `S256` in Keycloak client settings
+    - Make sure "Client authentication" is disabled for public clients
+
+2. **Redirect URI mismatch**: Ensure the redirect URI in Keycloak matches your app's URI scheme
+
+3. **Token refresh fails**: Check if refresh tokens are enabled in your Keycloak client
+
+4. **Network errors**: Verify Keycloak server is accessible and CORS is configured properly
 
 ### Debug Mode
 

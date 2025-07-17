@@ -30,14 +30,25 @@ export interface KeycloakUser {
     [key: string]: any;
 }
 
+export interface KeycloakLoginOptions {
+    action?: 'login' | 'register';
+    prompt?: 'none' | 'login' | 'consent' | 'select_account';
+    maxAge?: number;
+    loginHint?: string;
+    idpHint?: string;
+    locale?: string;
+    additionalParams?: Record<string, string>;
+}
+
 export interface KeycloakContextType {
     isAuthenticated: boolean;
     user: KeycloakUser | null;
     tokens: KeycloakTokens | null;
-    login: () => Promise<void>;
+    login: (options?: KeycloakLoginOptions) => Promise<void>;
     logout: () => Promise<void>;
     refresh: () => Promise<void>;
     isLoading: boolean;
+    initialized: boolean;
     error: string | null;
 }
 
