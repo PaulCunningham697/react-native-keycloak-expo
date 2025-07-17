@@ -41,7 +41,6 @@ export const KeycloakProvider: React.FC<KeycloakProviderProps> = ({ config, chil
       scopes: config.scopes || ["openid", "profile", "email"],
       redirectUri: config.redirectUri,
       responseType: AuthSession.ResponseType.Code,
-      additionalParameters: config.additionalParameters || {},
     },
     discovery,
   );
